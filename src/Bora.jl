@@ -46,9 +46,9 @@ end
 
 function get_ξℓ(input_params, ξℓ_emu::ξℓEmulator)
     input = deepcopy(input_params)
-    maximin_input!(input, ξℓ_emu.InMinMax)
+    maximin!(input, ξℓ_emu.InMinMax)
     output = Array(run_emulator(input, ξℓ_emu.TrainedEmulator))
-    inv_maximin_output!(output, ξℓ_emu.OutMinMax)
+    inv_maximin!(output, ξℓ_emu.OutMinMax)
     return output
 end
 
