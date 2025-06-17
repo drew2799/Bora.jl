@@ -45,11 +45,10 @@ function get_ξℓs(input_params::Matrix, ξℓs_emu::CompleteEmulator)
 end
 
 function get_ξℓ(input_params, ξℓ_emu::ξℓEmulator)
-    input = deepcopy(input_params)
-    maximin!(input, ξℓ_emu.InMinMax)
+    input = maximin(input_params, ξℓ_emu.InMinMax)
     output = Array(run_emulator(input, ξℓ_emu.TrainedEmulator))
-    inv_maximin!(output, ξℓ_emu.OutMinMax)
-    return output
+    output_params = inv_maximin(output, ξℓ_emu.OutMinMax)
+    return output_params
 end
 
 function get_broadband(r, bbpar::Vector{T}) where T
