@@ -33,7 +33,7 @@ function load_multipole_emulator(path, ℓ; s_file="s.npy", weights_file="weight
     NN_dict = parsefile(joinpath(path, nn_setup_file))
     
     weights = joinpath(path, string(ℓ), weights_file)
-    s_test = npzread(joinpath(path, ss_file))
+    s_test = npzread(joinpath(path, s_file))
     
     trained_emu = init_emulator(NN_dict, weights, SimpleChainsEmulator)
     ξℓ_emu = Bora.ξℓEmulator(TrainedEmulator = trained_emu, rgrid=s_test,
