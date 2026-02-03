@@ -5,6 +5,7 @@ using Base: @kwdef
 using AbstractCosmologicalEmulators
 import AbstractCosmologicalEmulators.get_emulator_description
 import AbstractCosmologicalEmulators.init_emulator
+using NPZ
 using JSON
 import JSON.parsefile
 
