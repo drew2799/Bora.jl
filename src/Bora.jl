@@ -53,7 +53,7 @@ function load_complete_emulator(path; s_file="s.npy", weights_file="weights.npy"
         outminmax_file=outminmax_file, nn_setup_file=nn_setup_file)
     complete_ξℓ = Bora.CompleteEmulator(rgrid=ξℓ0_emu.rgrid, ξℓMono=ξℓ0_emu, ξℓQuad=ξℓ2_emu, ξℓHexa=ξℓ4_emu);
     @info "✅ Loading completed"
-    return complete_emu
+    return complete_ξℓ
 end
 
 function get_ξℓs(input_params::Vector, ξℓs_emu::CompleteEmulator)
